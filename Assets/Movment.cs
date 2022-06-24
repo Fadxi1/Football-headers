@@ -5,7 +5,7 @@ using UnityEngine;
 public class Movment : MonoBehaviour
 {
     float movementX;
-    public float velocity = 40f;
+    public float velocity = 200f;
     public Rigidbody2D rb;
     public float jumpForce = 4f;
 
@@ -21,7 +21,7 @@ public class Movment : MonoBehaviour
     {
         movementX = Input.GetAxis("Horizontal");
         print(movementX);
-
+        rb.velocity = new Vector2(movementX, rb.velocity.y);
     }
 
 }
